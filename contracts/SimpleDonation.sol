@@ -63,16 +63,21 @@ contract SimpleDonation {
         }
     }
 
-    // Check how much particular user has donated (in USD)
+    // Check how much particular user has donated (in ETH)
     function getUserContribution() public view returns (uint256) {
-        uint256 userEthBalance = s_addressToAmount[msg.sender];
-        return userEthBalance.convert_ETH_USD(s_priceFeed);
+        // uint256 userEthBalance = s_addressToAmount[msg.sender];
+        // return userEthBalance.convert_ETH_USD(s_priceFeed);
+        return s_addressToAmount[msg.sender];
     }
 
     // Check current contract balance (in USD)
     function getContractBalance() public view returns (uint256) {
         uint256 ethBalance = address(this).balance;
         return ethBalance.convert_ETH_USD(s_priceFeed);
+    }
+
+    function getPricefeedAddress() public view returns (address) {
+        return address(s_priceFeed);
     }
 
     // Just call donate() if msg.data is empty

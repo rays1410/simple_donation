@@ -21,7 +21,7 @@ module.exports = {
         ],
     },
 
-    defaultNetwork: "goerli",
+    defaultNetwork: "hardhat",
     networks: {
         goerli: {
             url: GOERLI_RPC_URL,
