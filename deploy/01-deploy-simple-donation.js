@@ -1,12 +1,12 @@
-const { id } = require("ethers/lib/utils");
 const { network } = require("hardhat");
 const {
     networkConfig,
     developmentChains,
 } = require("../helper-hardhat-config");
+const { verify } = require("../utils/verify");
 
 // Using { getNamedAccounts, deployments } we import these objects
-// from hre object. This expression is equal to 
+// from hre object. This expression is equal to
 // { getNamedAccounts, deployments } = require("hre")
 
 module.exports = async ({ getNamedAccounts, deployments }) => {
@@ -24,17 +24,26 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     if (developmentChains.includes(network.name)) {
         const ethUsdAggregator = await deployments.get("MockV3Aggregator");
         ethUsdPriceFeedAddress = ethUsdAggregator.address;
-    } else { 
+    } else {
         ethUsdPriceFeedAddress = networkConfig[chainId]["ethUsdPricefeed"];
     }
 
     // Deploying
-    const SimpleDonation = await deploy("SimpleDonation", {
+    const args = [ethUsdPriceFeedAddress];
+    const simpleDonation = await deploy("SimpleDonation", {
         from: deployer,
-        args: [ethUsdPriceFeedAddress],
+        args: args,
         log: true,
+        waitConfirmations: network.config.blockConfirmations || 1,
     });
     log("SimpleDonation deployed!");
+
+    if (
+        !developmentChains.includes(network.name) &&
+        process.env.ETHERSCAN_API_KEY
+    ) {
+        await verify(simpleDonation.address, args);
+    }
     log("-----------------------");
 };
 

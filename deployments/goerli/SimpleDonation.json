@@ -1,0 +1,197 @@
+{
+  "address": "0x446798d7320F36a7Eb5834758fB0fbF318165889",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_priceFeed",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "SimpleDonation__NotOwner",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_donator",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "Donation__Alert",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "Donation__FundsWithdrawed",
+      "type": "event"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "fallback"
+    },
+    {
+      "inputs": [],
+      "name": "donate",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getContractBalance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getUserContribution",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "withdraw",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "receive"
+    }
+  ],
+  "transactionHash": "0xe565e4da3d286df4d235136baf5c8237b316c411e5950a72c15425f14b44842f",
+  "receipt": {
+    "to": null,
+    "from": "0xe80A96afEE501Db83bF3Cd7a87FAaD21649cef6E",
+    "contractAddress": "0x446798d7320F36a7Eb5834758fB0fbF318165889",
+    "transactionIndex": 123,
+    "gasUsed": "501129",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x59604ca20cd6cea894c9a5f2fd3580d6f8d8f5abb6dd2fe4799511dce5b41127",
+    "transactionHash": "0xe565e4da3d286df4d235136baf5c8237b316c411e5950a72c15425f14b44842f",
+    "logs": [],
+    "blockNumber": 7766424,
+    "cumulativeGasUsed": "21052847",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0xd4a33860578de61dbabdc8bfdb98fd742fa7028e"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "fe5b21fe91770a00a196d7acb760a9b7",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.8+commit.dddeac2f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_priceFeed\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"SimpleDonation__NotOwner\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_donator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"Donation__Alert\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"Donation__FundsWithdrawed\",\"type\":\"event\"},{\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"inputs\":[],\"name\":\"donate\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getContractBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getUserContribution\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"author\":\"rays1410\",\"details\":\"One needs to expand it to the contract factory.      It means that any user can deploy its own donation contract      based on this one.\",\"kind\":\"dev\",\"methods\":{},\"title\":\"Simple donation contract\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"This contract allows to create donation contract\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/SimpleDonation.sol\":\"SimpleDonation\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.0;\\n\\ninterface AggregatorV3Interface {\\n  function decimals() external view returns (uint8);\\n\\n  function description() external view returns (string memory);\\n\\n  function version() external view returns (uint256);\\n\\n  function getRoundData(uint80 _roundId)\\n    external\\n    view\\n    returns (\\n      uint80 roundId,\\n      int256 answer,\\n      uint256 startedAt,\\n      uint256 updatedAt,\\n      uint80 answeredInRound\\n    );\\n\\n  function latestRoundData()\\n    external\\n    view\\n    returns (\\n      uint80 roundId,\\n      int256 answer,\\n      uint256 startedAt,\\n      uint256 updatedAt,\\n      uint80 answeredInRound\\n    );\\n}\\n\",\"keccak256\":\"0x6e6e4b0835904509406b070ee173b5bc8f677c19421b76be38aea3b1b3d30846\",\"license\":\"MIT\"},\"contracts/CurrencyConverter.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\n\\r\\npragma solidity ^0.8.0;\\r\\nimport \\\"@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol\\\";\\r\\n\\r\\n/**@title ETH/USD converter library for unit256\\r\\n * @author rays1410\\r\\n * @notice Using this library we can convert ETH to USD\\r\\n */\\r\\n\\r\\nlibrary CurrencyConverter {\\r\\n    function convert_ETH_USD(\\r\\n        uint256 ethAmount,\\r\\n        AggregatorV3Interface _priceFeed\\r\\n    ) internal view returns (uint256) {\\r\\n        (, int256 answer, , , ) = _priceFeed.latestRoundData();\\r\\n        uint256 ethPrice = (uint256(answer) * 10e10);\\r\\n        return (ethPrice * ethAmount) / 10e18;\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0x1b75253c088fbc9d76d0bf4af0e6727ebfd797d60cb9e00aee180ccf4c3664d7\",\"license\":\"MIT\"},\"contracts/SimpleDonation.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\n\\r\\npragma solidity ^0.8.0;\\r\\nimport \\\"@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol\\\";\\r\\nimport \\\"./CurrencyConverter.sol\\\";\\r\\n\\r\\n/* Errors */\\r\\nerror SimpleDonation__NotOwner();\\r\\n\\r\\n/**@title Simple donation contract\\r\\n * @author rays1410\\r\\n * @notice This contract allows to create donation contract\\r\\n * @dev One needs to expand it to the contract factory.\\r\\n *      It means that any user can deploy its own donation contract\\r\\n *      based on this one.\\r\\n */\\r\\ncontract SimpleDonation {\\r\\n    /* Libraries */\\r\\n    using CurrencyConverter for uint256;\\r\\n\\r\\n    // Donators array\\r\\n    address[] private s_donators;\\r\\n\\r\\n    // The owner is set once (also immutable consumes less gas)\\r\\n    address private immutable i_owner;\\r\\n\\r\\n    // Current contribution of users\\r\\n    mapping(address => uint256) private s_addressToAmount;\\r\\n\\r\\n    // Goerli, Chainlink: 0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e\\r\\n    // For the current USD/ETH price\\r\\n    AggregatorV3Interface private s_priceFeed;\\r\\n\\r\\n    /* Events */\\r\\n    event Donation__Alert(address indexed _donator, uint256 _amount); // Emit this when the new donation received\\r\\n    event Donation__FundsWithdrawed(uint256 _amount); // Emit when all balance is withdrawed by owner\\r\\n\\r\\n    // OnlyOwner modifier, can be replaced for the OpenZeppelin one\\r\\n    modifier onlyOwner() {\\r\\n        if (msg.sender != i_owner) {\\r\\n            revert SimpleDonation__NotOwner();\\r\\n        }\\r\\n        _;\\r\\n    }\\r\\n\\r\\n    constructor(address _priceFeed) {\\r\\n        s_priceFeed = AggregatorV3Interface(_priceFeed);\\r\\n        i_owner = msg.sender;\\r\\n    }\\r\\n\\r\\n    // Users use this function for donation\\r\\n    function donate() public payable {\\r\\n        s_donators.push(msg.sender);\\r\\n        s_addressToAmount[msg.sender] += msg.value;\\r\\n        emit Donation__Alert(msg.sender, msg.value);\\r\\n    }\\r\\n\\r\\n    // The owner withdraws balance when he wants\\r\\n    function withdraw() public payable onlyOwner {\\r\\n        (bool sent, ) = msg.sender.call{value: address(this).balance}(\\\"\\\");\\r\\n        if (sent == true) {\\r\\n            emit Donation__FundsWithdrawed(address(this).balance);\\r\\n        }\\r\\n    }\\r\\n\\r\\n    // Check how much particular user has donated (in USD)\\r\\n    function getUserContribution() public view returns (uint256) {\\r\\n        uint256 userEthBalance = s_addressToAmount[msg.sender];\\r\\n        return userEthBalance.convert_ETH_USD(s_priceFeed);\\r\\n    }\\r\\n\\r\\n    // Check current contract balance (in USD)\\r\\n    function getContractBalance() public view returns (uint256) {\\r\\n        uint256 ethBalance = address(this).balance;\\r\\n        return ethBalance.convert_ETH_USD(s_priceFeed);\\r\\n    }\\r\\n\\r\\n    // Just call donate() if msg.data is empty\\r\\n    receive() external payable {\\r\\n        donate();\\r\\n    }\\r\\n\\r\\n    // Just call donate() if msg.data is not empty\\r\\n    fallback() external payable {\\r\\n        donate();\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0x6dc9abf3b4b7febc974db6945065cdec21cb0f21e1dcb2080ed422acc1890574\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x60a060405234801561001057600080fd5b506040516108ff3803806108ff83398181016040528101906100329190610113565b80600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055503373ffffffffffffffffffffffffffffffffffffffff1660808173ffffffffffffffffffffffffffffffffffffffff1660601b8152505050610140565b600080fd5b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b60006100e0826100b5565b9050919050565b6100f0816100d5565b81146100fb57600080fd5b50565b60008151905061010d816100e7565b92915050565b600060208284031215610129576101286100b0565b5b6000610137848285016100fe565b91505092915050565b60805160601c6107a161015e60003960006101d101526107a16000f3fe6080604052600436106100435760003560e01c80633ccfd60b1461005c5780635b19349e146100665780636f9fb98a14610091578063ed88c68e146100bc57610052565b36610052576100506100c6565b005b61005a6100c6565b005b6100646101cf565b005b34801561007257600080fd5b5061007b610308565b60405161008891906104a7565b60405180910390f35b34801561009d57600080fd5b506100a6610388565b6040516100b391906104a7565b60405180910390f35b6100c46100c6565b005b6000339080600181540180825580915050600190039060005260206000200160009091909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555034600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825461017891906104f1565b925050819055503373ffffffffffffffffffffffffffffffffffffffff167f2a17cc1e39e7eab0dc3182373325db128bed3778474de00f0d974afe059b3f5e346040516101c591906104a7565b60405180910390a2565b7f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614610254576040517f22e2d6c200000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b60003373ffffffffffffffffffffffffffffffffffffffff164760405161027a90610578565b60006040518083038185875af1925050503d80600081146102b7576040519150601f19603f3d011682016040523d82523d6000602084013e6102bc565b606091505b50509050600115158115151415610305577f2ec5b7e99136091fc5235fa9a8100671166176f54b175cd37261fa7a3cf35da3476040516102fc91906104a7565b60405180910390a15b50565b600080600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050610382600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16826103c990919063ffffffff16565b91505090565b6000804790506103c3600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16826103c990919063ffffffff16565b91505090565b6000808273ffffffffffffffffffffffffffffffffffffffff1663feaf968c6040518163ffffffff1660e01b815260040160a06040518083038186803b15801561041257600080fd5b505afa158015610426573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061044a9190610636565b505050915050600064174876e8008261046391906106b1565b9050678ac7230489e80000858261047a91906106b1565b610484919061073a565b9250505092915050565b6000819050919050565b6104a18161048e565b82525050565b60006020820190506104bc6000830184610498565b92915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b60006104fc8261048e565b91506105078361048e565b9250827fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0382111561053c5761053b6104c2565b5b828201905092915050565b600081905092915050565b50565b6000610562600083610547565b915061056d82610552565b600082019050919050565b600061058382610555565b9150819050919050565b600080fd5b600069ffffffffffffffffffff82169050919050565b6105b181610592565b81146105bc57600080fd5b50565b6000815190506105ce816105a8565b92915050565b6000819050919050565b6105e7816105d4565b81146105f257600080fd5b50565b600081519050610604816105de565b92915050565b6106138161048e565b811461061e57600080fd5b50565b6000815190506106308161060a565b92915050565b600080600080600060a086880312156106525761065161058d565b5b6000610660888289016105bf565b9550506020610671888289016105f5565b945050604061068288828901610621565b935050606061069388828901610621565b92505060806106a4888289016105bf565b9150509295509295909350565b60006106bc8261048e565b91506106c78361048e565b9250817fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0483118215151615610700576106ff6104c2565b5b828202905092915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601260045260246000fd5b60006107458261048e565b91506107508361048e565b9250826107605761075f61070b565b5b82820490509291505056fea26469706673582212202b97148bd0eef0dd1ee5d2097de0673e3be0a352dd55acee1de1f23c5fe47e5d64736f6c63430008080033",
+  "deployedBytecode": "0x6080604052600436106100435760003560e01c80633ccfd60b1461005c5780635b19349e146100665780636f9fb98a14610091578063ed88c68e146100bc57610052565b36610052576100506100c6565b005b61005a6100c6565b005b6100646101cf565b005b34801561007257600080fd5b5061007b610308565b60405161008891906104a7565b60405180910390f35b34801561009d57600080fd5b506100a6610388565b6040516100b391906104a7565b60405180910390f35b6100c46100c6565b005b6000339080600181540180825580915050600190039060005260206000200160009091909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555034600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825461017891906104f1565b925050819055503373ffffffffffffffffffffffffffffffffffffffff167f2a17cc1e39e7eab0dc3182373325db128bed3778474de00f0d974afe059b3f5e346040516101c591906104a7565b60405180910390a2565b7f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614610254576040517f22e2d6c200000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b60003373ffffffffffffffffffffffffffffffffffffffff164760405161027a90610578565b60006040518083038185875af1925050503d80600081146102b7576040519150601f19603f3d011682016040523d82523d6000602084013e6102bc565b606091505b50509050600115158115151415610305577f2ec5b7e99136091fc5235fa9a8100671166176f54b175cd37261fa7a3cf35da3476040516102fc91906104a7565b60405180910390a15b50565b600080600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050610382600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16826103c990919063ffffffff16565b91505090565b6000804790506103c3600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16826103c990919063ffffffff16565b91505090565b6000808273ffffffffffffffffffffffffffffffffffffffff1663feaf968c6040518163ffffffff1660e01b815260040160a06040518083038186803b15801561041257600080fd5b505afa158015610426573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061044a9190610636565b505050915050600064174876e8008261046391906106b1565b9050678ac7230489e80000858261047a91906106b1565b610484919061073a565b9250505092915050565b6000819050919050565b6104a18161048e565b82525050565b60006020820190506104bc6000830184610498565b92915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b60006104fc8261048e565b91506105078361048e565b9250827fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0382111561053c5761053b6104c2565b5b828201905092915050565b600081905092915050565b50565b6000610562600083610547565b915061056d82610552565b600082019050919050565b600061058382610555565b9150819050919050565b600080fd5b600069ffffffffffffffffffff82169050919050565b6105b181610592565b81146105bc57600080fd5b50565b6000815190506105ce816105a8565b92915050565b6000819050919050565b6105e7816105d4565b81146105f257600080fd5b50565b600081519050610604816105de565b92915050565b6106138161048e565b811461061e57600080fd5b50565b6000815190506106308161060a565b92915050565b600080600080600060a086880312156106525761065161058d565b5b6000610660888289016105bf565b9550506020610671888289016105f5565b945050604061068288828901610621565b935050606061069388828901610621565b92505060806106a4888289016105bf565b9150509295509295909350565b60006106bc8261048e565b91506106c78361048e565b9250817fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0483118215151615610700576106ff6104c2565b5b828202905092915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601260045260246000fd5b60006107458261048e565b91506107508361048e565b9250826107605761075f61070b565b5b82820490509291505056fea26469706673582212202b97148bd0eef0dd1ee5d2097de0673e3be0a352dd55acee1de1f23c5fe47e5d64736f6c63430008080033",
+  "devdoc": {
+    "author": "rays1410",
+    "details": "One needs to expand it to the contract factory.      It means that any user can deploy its own donation contract      based on this one.",
+    "kind": "dev",
+    "methods": {},
+    "title": "Simple donation contract",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "notice": "This contract allows to create donation contract",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 97,
+        "contract": "contracts/SimpleDonation.sol:SimpleDonation",
+        "label": "s_donators",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_array(t_address)dyn_storage"
+      },
+      {
+        "astId": 103,
+        "contract": "contracts/SimpleDonation.sol:SimpleDonation",
+        "label": "s_addressToAmount",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_mapping(t_address,t_uint256)"
+      },
+      {
+        "astId": 106,
+        "contract": "contracts/SimpleDonation.sol:SimpleDonation",
+        "label": "s_priceFeed",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_contract(AggregatorV3Interface)45"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_array(t_address)dyn_storage": {
+        "base": "t_address",
+        "encoding": "dynamic_array",
+        "label": "address[]",
+        "numberOfBytes": "32"
+      },
+      "t_contract(AggregatorV3Interface)45": {
+        "encoding": "inplace",
+        "label": "contract AggregatorV3Interface",
+        "numberOfBytes": "20"
+      },
+      "t_mapping(t_address,t_uint256)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => uint256)",
+        "numberOfBytes": "32",
+        "value": "t_uint256"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}
