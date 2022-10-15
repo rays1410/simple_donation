@@ -5,12 +5,15 @@ describe("SimpleDonation", async function () {
     let simpleDonation;
     let mockV3Aggregator;
     let deployer;
+    let userSignerInstance;
     const sendValue = ethers.utils.parseEther("0.0001"); // 0.0001 ETH
     beforeEach(async function () {
         // hre (like in the deployment scripts) is almost the same
         // as "hardhat". So we can collect the accounts from it
         deployer = (await getNamedAccounts()).deployer;
         user = (await getNamedAccounts()).user;
+        userSignerInstance = await ethers.getSigner(user);
+
         // Also we can use the following syntax. It provides the list of accounts
         // directly from the hardhat.config.js
         // const accounts = await ethers.getSigners();
@@ -37,21 +40,53 @@ describe("SimpleDonation", async function () {
 
     describe("donate", async function () {
         it("correct changes in (address => value) mapping after donation", async function () {
-            const response = await simpleDonation.donate({ value: sendValue });
+            await simpleDonation.donate({ value: sendValue });
             const contribution = await simpleDonation.getUserContribution();
             assert.equal(contribution.toString(), sendValue.toString());
         });
+    });
 
+    describe("withdraw", async function () {
         it("only owner of the contract can withdraw ETH", async function () {
-            // await simpleDonation.donate({ value: sendValue });
-            const contribution = await simpleDonation.getUserContribution();
-
             // To avoid VoidSigner, we should not use .connect(user) but
             // .connect(userSignerInstance)
-            const userSignerInstance = await ethers.getSigner(user);
-            await expect(
-                simpleDonation.connect(userSignerInstance).withdraw()
-            ).to.be.reverted;
+            await expect(simpleDonation.connect(userSignerInstance).withdraw())
+                .to.be.reverted;
+        });
+
+        it("correct withdraw work", async function () {
+            await simpleDonation.donate({ value: sendValue });
+            const startingContractBalance =
+                await simpleDonation.provider.getBalance(
+                    simpleDonation.address
+                );
+            const startingDeployerBalance =
+                await simpleDonation.provider.getBalance(deployer);
+
+            // Handle the transaction
+            const transactionResponse = await simpleDonation.withdraw();
+            const transactionReceipt = await transactionResponse.wait();
+
+            // Calculate gas price
+            const { gasUsed, effectiveGasPrice } = transactionReceipt;
+            const gasCost = gasUsed.mul(effectiveGasPrice);
+
+            // The balances of deployer and contract after withdraw()
+            const finalContractBalance =
+                await simpleDonation.provider.getBalance(
+                    simpleDonation.address
+                );
+            const finalDeployerBalance =
+                await simpleDonation.provider.getBalance(deployer);
+
+            // As we withdraw all money, the balance should be zero
+            assert.equal(finalContractBalance, 0);
+
+            // The balance of the user should be increased
+            assert.equal(
+                startingDeployerBalance.add(startingContractBalance).toString(),
+                finalDeployerBalance.add(gasCost).toString()
+            );
         });
     });
 });
