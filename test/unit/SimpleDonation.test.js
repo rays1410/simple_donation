@@ -54,7 +54,7 @@ describe("SimpleDonation", async function () {
                 .to.be.reverted;
         });
 
-        it("correct withdraw work", async function () {
+        it("withdrawing works correctly", async function () {
             await simpleDonation.donate({ value: sendValue });
             const startingContractBalance =
                 await simpleDonation.provider.getBalance(
