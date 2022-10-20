@@ -22,7 +22,7 @@ async function connect() {
         connectButton.innerHTML = "Connected!";
     } else {
         console.log("error...");
-        fundButton.innerHTML = "Please install Metamask!";
+        connectButton.innerHTML = "Please install Metamask!";
     }
 }
 
